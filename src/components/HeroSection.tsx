@@ -50,7 +50,7 @@ export const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
-        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-primary/20 dark:from-background/80 dark:via-background/70 dark:to-background/60" />
       </div>
 
       {/* Animated particles */}
