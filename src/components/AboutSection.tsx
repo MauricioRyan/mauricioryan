@@ -86,7 +86,7 @@ export const AboutSection = () => {
       <div className="container mx-auto px-6">
         {/* Section header */}
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <p className="text-primary font-mono text-sm mb-4">&lt;Sobre Mí /&gt;</p>
+          <p className="text-primary font-display text-sm uppercase tracking-widest mb-4">Acerca de mí</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             Conoce a <span className="text-gradient">Mauricio</span>
           </h2>

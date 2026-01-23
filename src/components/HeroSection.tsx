@@ -69,8 +69,8 @@ export const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         {/* Text Content */}
         <div className="flex-1 text-center lg:text-left">
-          <p className="text-primary font-mono text-sm mb-4 animate-fade-in">
-            &lt;Bienvenidos /&gt;
+          <p className="text-primary font-display text-sm uppercase tracking-widest mb-4 animate-fade-in">
+            ¡Hola! Bienvenidos
           </p>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-4 animate-slide-up">

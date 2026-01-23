@@ -14,7 +14,7 @@ const navItems = [
 export const FloatingNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +23,11 @@ export const FloatingNav = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    // Set light mode by default
+    document.documentElement.classList.add('light');
   }, []);
 
   const toggleTheme = () => {
