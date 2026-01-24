@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { Code, Database, Cloud, Camera, Users, Award } from 'lucide-react';
+import { Code, Database, Cloud, Users, Award } from 'lucide-react';
 
 const stats = [
-  { value: 20, suffix: '+', label: 'Años de Experiencia', icon: Award },
-  { value: 26, suffix: '+', label: 'Años como Profesor', icon: Users },
-  { value: 3, suffix: '', label: 'Certificaciones', icon: Award },
-  { value: 100, suffix: '%', label: 'Pasión por la Tecnología', icon: Code },
+  { value: 35, suffix: '+', label: 'Años de Experiencia', icon: Award },
+  { value: 30, suffix: '+', label: 'Años Formando', icon: Users },
+  { value: 20, suffix: '+', label: 'Años como DBA', icon: Database },
+  { value: 10, suffix: '+', label: 'Años en Cloud', icon: Cloud },
 ];
 
 const Counter = ({ end, suffix, duration = 2000 }: { end: number; suffix: string; duration?: number }) => {
@@ -91,7 +91,7 @@ export const AboutSection = () => {
             Conoce a <span className="text-gradient">Mauricio</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Más de dos décadas dedicadas a la tecnología, la enseñanza y la captura de momentos únicos.
+            Más de tres décadas dedicadas a la tecnología, la formación y la exploración de nuevas fronteras como la IA.
           </p>
         </div>
 
@@ -109,10 +109,10 @@ export const AboutSection = () => {
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Database, label: 'DBA Expert', desc: 'Oracle & MongoDB' },
-                { icon: Cloud, label: 'DevOps Leader', desc: 'Kubernetes & Docker' },
-                { icon: Users, label: 'Profesor', desc: 'UTN Mendoza' },
-                { icon: Camera, label: 'Fotógrafo', desc: 'Pasión artística' },
+                { icon: Database, label: 'DBA Expert', desc: 'Oracle & PostgreSQL' },
+                { icon: Cloud, label: 'Arquitecto Cloud', desc: 'AWS & Infraestructura' },
+                { icon: Users, label: 'Formador', desc: 'Instructor & Divulgador' },
+                { icon: Code, label: 'Explorador IA', desc: 'Investigación & Aplicación' },
               ].map((item, index) => (
                 <div
                   key={item.label}

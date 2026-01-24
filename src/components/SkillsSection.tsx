@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Gauge, Code, Server, BookOpen, Camera, Users } from 'lucide-react';
+import { Gauge, Code, Server, BookOpen, Users } from 'lucide-react';
 
 interface Skill {
   name: string;
@@ -9,20 +9,20 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: 'DevOps', level: 90, icon: Server, color: 'from-primary to-accent' },
-  { name: 'Profesor', level: 100, icon: BookOpen, color: 'from-chart-3 to-chart-4' },
-  { name: 'Project Manager', level: 70, icon: Users, color: 'from-chart-4 to-chart-5' },
-  { name: 'DBA', level: 100, icon: Code, color: 'from-chart-2 to-primary' },
-  { name: 'Fotógrafo', level: 100, icon: Camera, color: 'from-accent to-chart-3' },
+  { name: 'DBA Oracle & PostgreSQL', level: 100, icon: Code, color: 'from-chart-2 to-primary' },
+  { name: 'Formación & Divulgación', level: 100, icon: BookOpen, color: 'from-chart-3 to-chart-4' },
+  { name: 'Arquitectura Cloud', level: 90, icon: Server, color: 'from-primary to-accent' },
+  { name: 'DevOps & SRE', level: 90, icon: Server, color: 'from-accent to-chart-3' },
+  { name: 'Inteligencia Artificial', level: 75, icon: Users, color: 'from-chart-4 to-chart-5' },
 ];
 
 const technologies: { name: string; level: number; logo: string }[] = [
-  { name: 'Docker', level: 90, logo: '🐳' },
-  { name: 'Kubernetes', level: 70, logo: '☸️' },
-  { name: 'Cloud Native', level: 70, logo: '☁️' },
-  { name: 'MongoDB', level: 70, logo: '🍃' },
   { name: 'Oracle', level: 95, logo: '🔮' },
-  { name: 'AWS', level: 75, logo: '📦' },
+  { name: 'PostgreSQL', level: 90, logo: '🐘' },
+  { name: 'AWS', level: 85, logo: '☁️' },
+  { name: 'Docker', level: 90, logo: '🐳' },
+  { name: 'Kubernetes', level: 75, logo: '☸️' },
+  { name: 'IA/ML', level: 70, logo: '🤖' },
 ];
 
 const SkillBar = ({ skill, index, isVisible }: { skill: Skill; index: number; isVisible: boolean }) => {
@@ -146,7 +146,7 @@ export const SkillsSection = () => {
             Skills & <span className="text-gradient">Tecnologías</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Competencias desarrolladas a lo largo de más de 20 años de carrera profesional
+            Competencias desarrolladas a lo largo de más de 35 años de carrera profesional
           </p>
         </div>
 

@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import heroBg from '@/assets/hero-bg.jpg';
 import profileImg from '@/assets/mauricio-ryan.jpg';
 
-const titles = ['Ingeniero', 'Profesor', 'Fotógrafo', 'DevOps Leader', 'DBA Expert'];
+const titles = ['Ingeniero', 'Formador', 'Arquitecto Cloud', 'DevOps Leader', 'DBA Expert', 'Explorador de IA'];
 
 export const HeroSection = () => {
   const [currentTitle, setCurrentTitle] = useState(0);
@@ -127,10 +127,10 @@ export const HeroSection = () => {
 
             {/* Floating badges */}
             <div className="absolute -right-4 top-8 glass px-4 py-2 rounded-full animate-float">
-              <span className="text-sm font-medium">20+ años exp</span>
+              <span className="text-sm font-medium">35+ años exp</span>
             </div>
             <div className="absolute -left-4 bottom-16 glass px-4 py-2 rounded-full animate-float delay-300">
-              <span className="text-sm font-medium">AWS Certified</span>
+              <span className="text-sm font-medium">AWS Academy Graduate</span>
             </div>
           </div>
         </div>

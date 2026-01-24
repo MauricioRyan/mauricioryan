@@ -63,7 +63,7 @@ const experiences: Experience[] = [
     company: 'Poder Judicial de Mendoza',
     period: 'Dic. 2004 - Abr. 2011',
     location: 'Mendoza, Argentina',
-    description: 'Administración y optimización de bases de datos Oracle.',
+    description: 'Administración y optimización de bases de datos Oracle y PostgreSQL.',
     current: false,
   },
   {
@@ -170,7 +170,7 @@ export const ExperienceSection = () => {
             Trayectoria <span className="text-gradient">Profesional</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Más de 20 años de experiencia en el sector público y privado
+            Más de 35 años de experiencia en el sector público, privado y académico
           </p>
         </div>
 
@@ -196,10 +196,10 @@ export const ExperienceSection = () => {
         {/* Stats */}
         <div className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {[
-            { label: 'Años en Poder Judicial', value: '20+' },
-            { label: 'Años como Profesor', value: '26+' },
-            { label: 'Roles Actuales', value: '5' },
-            { label: 'Instituciones', value: '3' },
+            { label: 'Años de Experiencia', value: '35+' },
+            { label: 'Años Formando', value: '30+' },
+            { label: 'Años como DBA', value: '20+' },
+            { label: 'Años en Cloud', value: '10+' },
           ].map((stat) => (
             <div key={stat.label} className="glass p-6 rounded-xl text-center">
               <p className="text-3xl font-display font-bold text-gradient mb-2">{stat.value}</p>
