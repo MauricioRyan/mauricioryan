@@ -43,10 +43,10 @@ const contactLinks = [
   },
   {
     icon: Video,
-    label: 'Zoom',
-    value: 'Reunión virtual',
-    href: 'https://utn.zoom.us/my/mauriciorya',
-    color: 'from-blue-500 to-cyan-500',
+    label: 'Google Meet',
+    value: 'Agendar reunión',
+    href: 'https://calendar.app.google/8a3pVo21oz2RADfW9',
+    color: 'from-emerald-500 to-teal-500',
   },
   {
     icon: Camera,
