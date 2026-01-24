@@ -45,12 +45,19 @@ export const HeroSection = () => {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image */}
+      {/* Background Image - Hidden in light mode, visible in dark mode */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 dark:opacity-100 transition-opacity duration-500"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-primary/20 dark:from-background/80 dark:via-background/70 dark:to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/70 to-background/60" />
+      </div>
+      
+      {/* Light mode background - Vibrant gradient */}
+      <div className="absolute inset-0 dark:opacity-0 transition-opacity duration-500">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/30 to-primary/10" />
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-primary/20 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-accent/15 to-transparent rounded-full blur-3xl" />
       </div>
 
       {/* Animated particles */}
