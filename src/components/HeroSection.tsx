@@ -73,44 +73,45 @@ export const HeroSection = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-b from-primary/20 to-transparent rounded-full blur-3xl opacity-50" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-20 pt-20 sm:pt-0">
         {/* Text Content */}
         <div className="flex-1 text-center lg:text-left">
-          <p className="text-primary font-display text-sm uppercase tracking-widest mb-4 animate-fade-in">
+          <p className="text-primary font-display text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4 animate-fade-in">
             ¡Hola! Bienvenidos
           </p>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-4 animate-slide-up">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-3 sm:mb-4 animate-slide-up">
             Soy <span className="text-gradient">Mauricio</span>
             <br />
             Ryan
           </h1>
 
-          <div className="h-12 md:h-16 mb-6">
-            <p className="text-2xl md:text-4xl font-display text-muted-foreground animate-fade-in">
+          <div className="h-10 sm:h-12 md:h-16 mb-4 sm:mb-6">
+            <p className="text-xl sm:text-2xl md:text-4xl font-display text-muted-foreground animate-fade-in">
               {displayText}
               <span className="animate-blink text-primary">|</span>
             </p>
           </div>
 
-          <p className="text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-8 animate-slide-up delay-200">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-6 sm:mb-8 animate-slide-up delay-200 px-2 sm:px-0">
             Curioso impulsivo, siempre buscando cosas nuevas para aprender y compartir. 
             Me gusta descubrir nuevas herramientas tecnológicas e investigar como usarlas.
           </p>
 
-          <div className="flex items-center justify-center lg:justify-start gap-2 text-muted-foreground mb-8 animate-slide-up delay-300">
-            <MapPin className="w-4 h-4 text-primary" />
-            <span>Mendoza, Argentina</span>
+          <div className="flex items-center justify-center lg:justify-start gap-2 text-muted-foreground mb-6 sm:mb-8 animate-slide-up delay-300">
+            <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
+            <span className="text-sm sm:text-base">Mendoza, Argentina</span>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up delay-400">
-            <Button variant="glow" size="xl" onClick={scrollToAbout}>
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 animate-slide-up delay-400 px-4 sm:px-0">
+            <Button variant="glow" size="xl" onClick={scrollToAbout} className="w-full sm:w-auto min-h-[48px] touch-manipulation">
               Conocer Más
             </Button>
             <Button
               variant="outline-glow"
               size="xl"
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="w-full sm:w-auto min-h-[48px] touch-manipulation"
             >
               Contactar
             </Button>
@@ -118,13 +119,13 @@ export const HeroSection = () => {
         </div>
 
         {/* Profile Image */}
-        <div className="flex-shrink-0 animate-scale-in">
+        <div className="flex-shrink-0 animate-scale-in order-first lg:order-last">
           <div className="relative">
             {/* Glow ring */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-full blur-2xl opacity-30 animate-pulse-glow" />
+            <div className="absolute -inset-3 sm:-inset-4 bg-gradient-to-r from-primary to-accent rounded-full blur-xl sm:blur-2xl opacity-30 animate-pulse-glow" />
             
             {/* Profile image container */}
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden gradient-border">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden gradient-border">
               <img
                 src={profileImg}
                 alt="Mauricio Ryan"
@@ -132,12 +133,12 @@ export const HeroSection = () => {
               />
             </div>
 
-            {/* Floating badges */}
-            <div className="absolute -right-4 top-8 glass px-4 py-2 rounded-full animate-float">
-              <span className="text-sm font-medium">35+ años exp</span>
+            {/* Floating badges - Hidden on very small screens */}
+            <div className="hidden sm:block absolute -right-2 sm:-right-4 top-4 sm:top-8 glass px-3 sm:px-4 py-1.5 sm:py-2 rounded-full animate-float">
+              <span className="text-xs sm:text-sm font-medium whitespace-nowrap">35+ años exp</span>
             </div>
-            <div className="absolute -left-4 bottom-16 glass px-4 py-2 rounded-full animate-float delay-300">
-              <span className="text-sm font-medium">AWS Academy Graduate</span>
+            <div className="hidden sm:block absolute -left-2 sm:-left-4 bottom-12 sm:bottom-16 glass px-3 sm:px-4 py-1.5 sm:py-2 rounded-full animate-float delay-300">
+              <span className="text-xs sm:text-sm font-medium whitespace-nowrap">AWS Academy Graduate</span>
             </div>
           </div>
         </div>
