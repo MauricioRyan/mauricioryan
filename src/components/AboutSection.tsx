@@ -46,7 +46,7 @@ const Counter = ({ end, suffix, duration = 2000 }: { end: number; suffix: string
   }, [isVisible, end, duration]);
 
   return (
-    <span ref={ref} className="text-4xl md:text-5xl font-display font-bold text-gradient">
+    <span ref={ref} className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gradient">
       {count}
       {suffix}
     </span>
@@ -78,36 +78,36 @@ export const AboutSection = () => {
     <section
       ref={sectionRef}
       id="about"
-      className="py-24 md:py-32 relative overflow-hidden"
+      className="py-16 sm:py-24 md:py-32 relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-primary/5 to-transparent rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Section header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <p className="text-primary font-display text-sm uppercase tracking-widest mb-4">Acerca de mí</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+        <div className={`text-center mb-10 sm:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <p className="text-primary font-display text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">Acerca de mí</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-3 sm:mb-4">
             Conoce a <span className="text-gradient">Mauricio</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
             Más de tres décadas dedicadas a la tecnología, la formación y la exploración de nuevas fronteras como la IA.
           </p>
         </div>
 
         {/* Main content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-10 sm:mb-16">
           {/* Left - Description */}
-          <div className={`space-y-6 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <div className="gradient-border p-6 rounded-xl bg-card">
-              <p className="text-lg leading-relaxed text-foreground/90">
+          <div className={`space-y-4 sm:space-y-6 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+            <div className="gradient-border p-4 sm:p-6 rounded-xl bg-card">
+              <p className="text-base sm:text-lg leading-relaxed text-foreground/90">
                 Curioso impulsivo, siempre buscando cosas nuevas para aprender y compartir. 
                 Me gusta descubrir nuevas herramientas tecnológicas e investigar como usarlas 
                 y conseguir resultados que sorprendan y me hagan sentir útil y especial.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {[
                 { icon: Database, label: 'DBA Expert', desc: 'Oracle & PostgreSQL' },
                 { icon: Cloud, label: 'Arquitecto Cloud', desc: 'AWS & Infraestructura' },
@@ -116,28 +116,28 @@ export const AboutSection = () => {
               ].map((item, index) => (
                 <div
                   key={item.label}
-                  className={`glass p-4 rounded-xl hover:scale-105 transition-all duration-300 cursor-default group`}
+                  className={`glass p-3 sm:p-4 rounded-xl active:scale-95 sm:hover:scale-105 transition-all duration-300 cursor-default group touch-manipulation`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <item.icon className="w-8 h-8 text-primary mb-2 group-hover:scale-110 transition-transform" />
-                  <h4 className="font-semibold">{item.label}</h4>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform" />
+                  <h4 className="font-semibold text-sm sm:text-base">{item.label}</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right - Stats */}
-          <div className={`grid grid-cols-2 gap-6 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+          <div className={`grid grid-cols-2 gap-3 sm:gap-6 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
-                className="glass p-6 rounded-xl text-center hover:scale-105 transition-all duration-300"
+                className="glass p-4 sm:p-6 rounded-xl text-center active:scale-95 sm:hover:scale-105 transition-all duration-300 touch-manipulation"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <stat.icon className="w-8 h-8 text-primary mx-auto mb-4" />
+                <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary mx-auto mb-2 sm:mb-4" />
                 <Counter end={stat.value} suffix={stat.suffix} />
-                <p className="text-sm text-muted-foreground mt-2">{stat.label}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1.5 sm:mt-2">{stat.label}</p>
               </div>
             ))}
           </div>

@@ -36,13 +36,13 @@ export const FloatingNav = () => {
   return (
     <>
       <nav
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+        className={`fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'glass rounded-full px-6 py-3 shadow-lg'
-            : 'bg-transparent px-6 py-4'
+            ? 'glass rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-lg'
+            : 'bg-transparent px-4 sm:px-6 py-3 sm:py-4'
         }`}
       >
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 sm:gap-8">
           {/* Logo */}
           <a
             href="#hero"
@@ -50,7 +50,7 @@ export const FloatingNav = () => {
               e.preventDefault();
               scrollToSection('#hero');
             }}
-            className="text-xl font-display font-bold text-gradient"
+            className="text-lg sm:text-xl font-display font-bold text-gradient touch-manipulation"
           >
             MR
           </a>
@@ -83,7 +83,8 @@ export const FloatingNav = () => {
             variant="ghost"
             size="icon"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden"
+            className="md:hidden min-w-[44px] min-h-[44px] touch-manipulation"
+            aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
             {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -92,11 +93,11 @@ export const FloatingNav = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-40 bg-background/95 backdrop-blur-lg transition-all duration-500 md:hidden ${
+        className={`fixed inset-0 z-40 bg-background/98 backdrop-blur-xl transition-all duration-500 md:hidden ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8">
+        <div className="flex flex-col items-center justify-center h-full gap-6 sm:gap-8 px-4">
           {navItems.map((item, index) => (
             <a
               key={item.href}
@@ -105,13 +106,13 @@ export const FloatingNav = () => {
                 e.preventDefault();
                 scrollToSection(item.href);
               }}
-              className={`text-2xl font-display font-medium text-foreground hover:text-primary transition-all duration-300 animate-slide-up`}
+              className={`text-xl sm:text-2xl font-display font-medium text-foreground hover:text-primary active:text-primary transition-all duration-300 animate-slide-up min-h-[44px] flex items-center touch-manipulation`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {item.label}
             </a>
           ))}
-          <div className="mt-4">
+          <div className="mt-4 sm:mt-6">
             <ThemeSwitcher />
           </div>
         </div>

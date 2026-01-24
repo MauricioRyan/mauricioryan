@@ -38,17 +38,17 @@ const SkillBar = ({ skill, index, isVisible }: { skill: Skill; index: number; is
   }, [isVisible, skill.level, index]);
 
   return (
-    <div className="group">
+    <div className="group touch-manipulation">
       <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-secondary group-hover:bg-primary/20 transition-colors">
-            <skill.icon className="w-5 h-5 text-primary" />
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="p-1.5 sm:p-2 rounded-lg bg-secondary group-hover:bg-primary/20 transition-colors">
+            <skill.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
           </div>
-          <span className="font-medium">{skill.name}</span>
+          <span className="font-medium text-sm sm:text-base">{skill.name}</span>
         </div>
-        <span className="text-sm text-muted-foreground font-mono">{skill.level}%</span>
+        <span className="text-xs sm:text-sm text-muted-foreground font-mono">{skill.level}%</span>
       </div>
-      <div className="h-2 bg-secondary rounded-full overflow-hidden">
+      <div className="h-2 sm:h-2.5 bg-secondary rounded-full overflow-hidden">
         <div
           className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
           style={{ width: `${width}%` }}
@@ -71,13 +71,13 @@ const TechCard = ({ tech, index, isVisible }: { tech: typeof technologies[0]; in
   }, [isVisible, tech.level, index]);
 
   return (
-    <div className="glass p-6 rounded-xl hover:scale-105 transition-all duration-300 group cursor-default">
-      <div className="text-4xl mb-4">{tech.logo}</div>
-      <h4 className="font-semibold mb-2">{tech.name}</h4>
+    <div className="glass p-4 sm:p-6 rounded-xl active:scale-95 sm:hover:scale-105 transition-all duration-300 group cursor-default touch-manipulation">
+      <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{tech.logo}</div>
+      <h4 className="font-semibold text-sm sm:text-base mb-2">{tech.name}</h4>
       
       {/* Circular progress */}
-      <div className="relative w-20 h-20 mx-auto">
-        <svg className="w-full h-full transform -rotate-90">
+      <div className="relative w-16 h-16 sm:w-20 sm:h-20 mx-auto">
+        <svg className="w-full h-full transform -rotate-90" viewBox="0 0 80 80">
           <circle
             cx="40"
             cy="40"
@@ -100,7 +100,7 @@ const TechCard = ({ tech, index, isVisible }: { tech: typeof technologies[0]; in
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-lg font-bold font-mono">{animatedLevel}%</span>
+          <span className="text-sm sm:text-lg font-bold font-mono">{animatedLevel}%</span>
         </div>
       </div>
     </div>
@@ -132,32 +132,32 @@ export const SkillsSection = () => {
     <section
       ref={sectionRef}
       id="skills"
-      className="py-24 md:py-32 relative overflow-hidden bg-secondary/30"
+      className="py-16 sm:py-24 md:py-32 relative overflow-hidden bg-secondary/30"
     >
       {/* Background decorations */}
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-3xl" />
       <div className="absolute top-1/4 right-0 w-1/4 h-1/4 bg-gradient-to-bl from-accent/10 to-transparent rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Section header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <p className="text-primary font-mono text-sm mb-4">&lt;Habilidades /&gt;</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+        <div className={`text-center mb-10 sm:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <p className="text-primary font-display text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">Habilidades</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-3 sm:mb-4">
             Skills & <span className="text-gradient">Tecnologías</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
             Competencias desarrolladas a lo largo de más de 35 años de carrera profesional
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Skills bars */}
-          <div className={`space-y-6 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <div className="flex items-center gap-3 mb-8">
-              <Gauge className="w-6 h-6 text-primary" />
-              <h3 className="text-2xl font-display font-bold">Competencias</h3>
+          <div className={`space-y-4 sm:space-y-6 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+            <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+              <Gauge className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+              <h3 className="text-xl sm:text-2xl font-display font-bold">Competencias</h3>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {skills.map((skill, index) => (
                 <SkillBar key={skill.name} skill={skill} index={index} isVisible={isVisible} />
               ))}
@@ -166,11 +166,11 @@ export const SkillsSection = () => {
 
           {/* Technologies grid */}
           <div className={`transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-            <div className="flex items-center gap-3 mb-8">
-              <Code className="w-6 h-6 text-primary" />
-              <h3 className="text-2xl font-display font-bold">Tecnologías</h3>
+            <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+              <Code className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+              <h3 className="text-xl sm:text-2xl font-display font-bold">Tecnologías</h3>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
               {technologies.map((tech, index) => (
                 <TechCard key={tech.name} tech={tech} index={index} isVisible={isVisible} />
               ))}

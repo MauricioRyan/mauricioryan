@@ -71,29 +71,29 @@ const ContactCard = ({
       href={link.href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group glass p-6 rounded-xl transition-all duration-500 hover:scale-105 cursor-pointer ${
+      className={`group glass p-4 sm:p-6 rounded-xl transition-all duration-500 active:scale-95 sm:hover:scale-105 cursor-pointer touch-manipulation ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <div className="flex items-start gap-4">
+      <div className="flex items-start gap-3 sm:gap-4">
         {/* Icon */}
         <div
-          className={`w-12 h-12 rounded-xl bg-gradient-to-br ${link.color} flex items-center justify-center group-hover:scale-110 transition-transform`}
+          className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${link.color} flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0`}
         >
-          <link.icon className="w-6 h-6 text-foreground" />
+          <link.icon className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
         </div>
 
         {/* Content */}
-        <div className="flex-1">
-          <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+        <div className="flex-1 min-w-0">
+          <h4 className="font-semibold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors">
             {link.label}
           </h4>
-          <p className="text-sm text-muted-foreground">{link.value}</p>
+          <p className="text-xs sm:text-sm text-muted-foreground truncate">{link.value}</p>
         </div>
 
         {/* Arrow */}
-        <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
+        <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 flex-shrink-0" />
       </div>
     </a>
   );
@@ -124,32 +124,32 @@ export const ContactSection = () => {
     <section
       ref={sectionRef}
       id="contact"
-      className="py-24 md:py-32 relative overflow-hidden"
+      className="py-16 sm:py-24 md:py-32 relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-primary/10 to-transparent rounded-full blur-3xl" />
       <div className="absolute top-1/4 left-0 w-1/4 h-1/2 bg-gradient-to-r from-accent/5 to-transparent rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Section header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <p className="text-primary font-display text-sm uppercase tracking-widest mb-4">Contacto</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+        <div className={`text-center mb-10 sm:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <p className="text-primary font-display text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">Contacto</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-3 sm:mb-4">
             ¿Hablamos? <span className="text-gradient">Conectemos</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
             Siempre abierto a nuevas oportunidades, colaboraciones y conversaciones interesantes
           </p>
         </div>
 
         {/* Location highlight */}
-        <div className={`flex items-center justify-center gap-2 mb-12 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <MapPin className="w-5 h-5 text-primary" />
-          <span className="text-lg">Mendoza, Argentina 🇦🇷</span>
+        <div className={`flex items-center justify-center gap-2 mb-8 sm:mb-12 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
+          <span className="text-base sm:text-lg">Mendoza, Argentina 🇦🇷</span>
         </div>
 
         {/* Contact grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 max-w-4xl mx-auto mb-10 sm:mb-16">
           {contactLinks.map((link, index) => (
             <ContactCard key={link.label} link={link} index={index} isVisible={isVisible} />
           ))}
@@ -157,11 +157,11 @@ export const ContactSection = () => {
 
         {/* CTA */}
         <div className={`text-center transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
-            <h3 className="text-2xl font-display font-bold mb-4">
+          <div className="glass p-6 sm:p-8 rounded-2xl max-w-2xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-display font-bold mb-3 sm:mb-4">
               ¿Tienes un proyecto en mente?
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
               Ya sea una consultoría técnica, capacitación o colaboración,
               estaré encantado de escucharte.
             </p>
@@ -169,8 +169,9 @@ export const ContactSection = () => {
               variant="glow"
               size="xl"
               onClick={() => window.open('mailto:mauricio@ryan.com.ar', '_blank')}
+              className="w-full sm:w-auto min-h-[48px] touch-manipulation"
             >
-              <Send className="w-5 h-5 mr-2" />
+              <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Enviar Mensaje
             </Button>
           </div>
