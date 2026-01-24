@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 const navItems = [
   { label: 'Inicio', href: '#hero' },
@@ -14,7 +15,6 @@ const navItems = [
 export const FloatingNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,16 +24,6 @@ export const FloatingNav = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    // Set light mode by default
-    document.documentElement.classList.add('light');
-  }, []);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle('light');
-  };
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -83,15 +73,10 @@ export const FloatingNav = () => {
             ))}
           </ul>
 
-          {/* Theme Toggle */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="hidden md:flex"
-          >
-            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
+          {/* Theme Switcher */}
+          <div className="hidden md:flex">
+            <ThemeSwitcher />
+          </div>
 
           {/* Mobile Menu Button */}
           <Button
@@ -126,15 +111,9 @@ export const FloatingNav = () => {
               {item.label}
             </a>
           ))}
-          <Button
-            variant="outline-glow"
-            size="lg"
-            onClick={toggleTheme}
-            className="mt-4"
-          >
-            {isDark ? <Sun className="h-5 w-5 mr-2" /> : <Moon className="h-5 w-5 mr-2" />}
-            {isDark ? 'Modo Claro' : 'Modo Oscuro'}
-          </Button>
+          <div className="mt-4">
+            <ThemeSwitcher />
+          </div>
         </div>
       </div>
     </>
