@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import heroBg from '@/assets/hero-bg.jpg';
 import profileImg from '@/assets/mauricio-ryan.jpg';
 
-const titles = ['Ingeniero', 'Formador', 'Arquitecto Cloud', 'DevOps Leader', 'DBA Expert', 'Explorador de IA'];
+const titles = ['Ingeniero', 'Formador', 'Arquitecto Cloud', 'DevOps Leader', 'DBA Expert', 'Explorador de IA', 'Aficionado a la Fotografía'];
 
 export const HeroSection = () => {
   const [currentTitle, setCurrentTitle] = useState(0);
