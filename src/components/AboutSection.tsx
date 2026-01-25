@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Code, Database, Cloud, Users, Award } from 'lucide-react';
+import { Code, Database, Cloud, Users, Award, Camera } from 'lucide-react';
 
 const stats = [
   { value: 35, suffix: '+', label: 'Años de Experiencia', icon: Award },
@@ -107,22 +107,38 @@ export const AboutSection = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4">
               {[
                 { icon: Database, label: 'DBA Expert', desc: 'Oracle & PostgreSQL' },
                 { icon: Cloud, label: 'Arquitecto Cloud', desc: 'AWS & Infraestructura' },
                 { icon: Users, label: 'Formador', desc: 'Instructor & Divulgador' },
                 { icon: Code, label: 'Explorador IA', desc: 'Investigación & Aplicación' },
+                { icon: Camera, label: 'Fotógrafo', desc: 'Disfrutando hacer fotos', href: 'https://photos.google.com/share/AF1QipOEVR6o9yx8fp-ZBhy3ZJdNGTapOd0AlxuNZI2lU7O36GM0_40tImgZ5Q4e4ewz1g?key=Z25QeVdCeWcyRE0zR3Q2ZTI2SFRCV1BKTkd4dUFn' },
               ].map((item, index) => (
-                <div
-                  key={item.label}
-                  className={`glass p-3 sm:p-4 rounded-xl active:scale-95 sm:hover:scale-105 transition-all duration-300 cursor-default group touch-manipulation`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform" />
-                  <h4 className="font-semibold text-sm sm:text-base">{item.label}</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">{item.desc}</p>
-                </div>
+                item.href ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`glass p-3 sm:p-4 rounded-xl active:scale-95 sm:hover:scale-105 transition-all duration-300 cursor-pointer group touch-manipulation`}
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
+                    <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform" />
+                    <h4 className="font-semibold text-sm sm:text-base">{item.label}</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{item.desc}</p>
+                  </a>
+                ) : (
+                  <div
+                    key={item.label}
+                    className={`glass p-3 sm:p-4 rounded-xl active:scale-95 sm:hover:scale-105 transition-all duration-300 cursor-default group touch-manipulation`}
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
+                    <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform" />
+                    <h4 className="font-semibold text-sm sm:text-base">{item.label}</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{item.desc}</p>
+                  </div>
+                )
               ))}
             </div>
           </div>
