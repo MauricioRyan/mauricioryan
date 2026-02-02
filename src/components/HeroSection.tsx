@@ -94,8 +94,7 @@ export const HeroSection = () => {
           </div>
 
           <p className="text-sm sm:text-base text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-6 sm:mb-8 animate-slide-up delay-200 px-2 sm:px-0">
-            Curioso impulsivo, siempre buscando cosas nuevas para aprender y compartir. 
-            Me gusta descubrir nuevas herramientas tecnológicas e investigar como usarlas.
+            Ayudo a equipos técnicos a modernizar su infraestructura cloud y a profesionales a dominar las tecnologías que impulsan su carrera.
           </p>
 
           <div className="flex items-center justify-center lg:justify-start gap-2 text-muted-foreground mb-6 sm:mb-8 animate-slide-up delay-300">
@@ -104,16 +103,21 @@ export const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 animate-slide-up delay-400 px-4 sm:px-0">
-            <Button variant="glow" size="xl" onClick={scrollToAbout} className="w-full sm:w-auto min-h-[48px] touch-manipulation">
-              Conocer Más
+            <Button 
+              variant="glow" 
+              size="xl" 
+              onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })} 
+              className="w-full sm:w-auto min-h-[48px] touch-manipulation"
+            >
+              Ver Servicios
             </Button>
             <Button
               variant="outline-glow"
               size="xl"
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => window.open('https://calendar.app.google/8a3pVo21oz2RADfW9', '_blank')}
               className="w-full sm:w-auto min-h-[48px] touch-manipulation"
             >
-              Contactar
+              Agendar Consulta Gratis
             </Button>
           </div>
         </div>

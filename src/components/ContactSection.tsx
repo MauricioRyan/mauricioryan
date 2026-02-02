@@ -159,7 +159,7 @@ export const ContactSection = () => {
         <div className={`text-center transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="glass p-6 sm:p-8 rounded-2xl max-w-2xl mx-auto">
             <h3 className="text-xl sm:text-2xl font-display font-bold mb-3 sm:mb-4">
-              ¿Tienes un proyecto en mente?
+              ¿Listo para dar el siguiente paso?
             </h3>
             <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
               Ya sea una consultoría técnica, capacitación o colaboración,
@@ -172,7 +172,7 @@ export const ContactSection = () => {
               className="w-full sm:w-auto min-h-[48px] touch-manipulation"
             >
               <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              Enviar Mensaje
+              Conversemos →
             </Button>
           </div>
         </div>
