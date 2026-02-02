@@ -125,7 +125,7 @@ export const EducationSection = () => {
       <div className="container mx-auto px-6">
         {/* Section header */}
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <p className="text-primary font-mono text-sm mb-4">&lt;Educación /&gt;</p>
+          <p className="text-primary font-display text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">Formación</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             Formación <span className="text-gradient">Académica</span>
           </h2>
